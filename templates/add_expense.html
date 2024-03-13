@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block button %}
+Go Back
+{% endblock %}
+{% block logout %}
+Logout
+{% endblock %}
+    {% block content %}
+    <div align="center" style="padding:1%">
+        <form method="post">
+            {% csrf_token %}
+<!--            {{ form.as_p}}-->
+            <div style="color:#140f0f; font-size:20px">
+            {{ form.Date.label }}
+            {{ form.Date }}
+                </div><br><br>
+            <div align="right" style="margin-right:60%; color:#067a23; font-size:20px">
+                {{ form.Salary.label }}
+                {{ form.Salary }}<br>
+                {{ form.Other_Income.label }}
+                {{ form.Other_Income }}<br>
+            </div>
+            <div align="right" style="margin-right:20%; color:#e82034; font-size:20px">
+                {{form.user.as_hidden}}
+                {{ form.Food.label }}
+                {{ form.Food }}<br>
+                {{ form.Transport.label }}
+                {{ form.Transport }}<br>
+                {{ form.Apparel.label }}
+                {{ form.Apparel }}<br>
+                {{ form.Education.label }}
+                {{ form.Education }}<br>
+                {{ form.Grocery.label }}
+                {{ form.Grocery }}<br>
+                {{ form.Health.label }}
+                {{ form.Health }}<br>
+                {{ form.Other_Expense.label }}
+                {{ form.Other_Expense }}<br><br><br>
+            </div>
+            <button class="btn btn-success" type="submit" > Submit </button>
+        </form>
+    </div>
+    {% endblock %}
+</body>
+</html>

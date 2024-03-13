@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% block content %}
+    <div align="center" style="padding:5%">
+        <h3 style="color:#6c7a70"> Take charge of your finances with Expensify's online web application. Our free budget tracker helps you understand your spending for a brighter financial future. </h3><br><br><br>
+        <h5> Already a member ? </h5>
+        <button  type="submit" class="btn btn-primary" onclick="location.href={% url 'login' %}"> Log In </button><br><br><br>
+        <h5> New to Expensify ? </h5>
+        <button  type="submit" class="btn btn-success" onclick="location.href={% url 'register' %}"> Register </button>
+    </div>
+    {% endblock %}
+</body>
+</html>

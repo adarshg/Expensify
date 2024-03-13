@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block logout %}
+Logout
+{% endblock %}
+    {% block content %}
+    <div style="margin-top:20px; padding:10px">
+        <div align="center" style="font-size:25px"> <div style="color:#036e42; float:left; margin-left:475px">Income</div>
+            <div style="color:#b81445;float:left; margin-left:70px">Expense</div> <div style="float:left; margin-left:80px">Total</div> </div><br><br>
+<h3 align="center" style="word-spacing:70px"> {{ total_inc }} {{ total_exp }}  {{ total }} </h3>
+  <br>
+        <table class="table table-striped" style="padding:10px">
+  <thead>
+        <tr>
+            <th> Date </th>
+            <th> Salary </th>
+            <th> Other Income </th>
+            <th> Food </th>
+            <th> Transport </th>
+            <th> Apparel </th>
+            <th> Education </th>
+            <th> Grocery </th>
+            <th> Health </th>
+            <th> Other Expense </th>
+        </tr>
+        </thead>
+  <tbody>
+        {% for e in expens %}
+        <tr>
+            <td> {{ e.Date }} </td>
+            <td> {{ e.Salary }} </td>
+            <td> {{ e.Other_Income }} </td>
+            <td> {{ e.Food }} </td>
+            <td> {{ e.Transport }} </td>
+            <td> {{ e.Apparel}} </td>
+            <td> {{ e.Education }} </td>
+            <td> {{ e.Grocery }} </td>
+            <td> {{ e.Health }} </td>
+            <td> {{ e.Other_Expense }} </td>
+        </tr>
+        {% endfor %}
+              </tbody>
+    </table>
+<br>
+    <button class="btn btn-danger" style="margin-left:80%; float:left"  onclick="location.href='{% url 'addexpense' %}'" > Add Expenses </button>
+    <button class="btn btn-warning" style="margin-left:3%; margin-top:0px"  onclick="location.href='{% url 'filterexpense' %}'" > Filter </button>
+    </div>
+        {% endblock %}
+</body>
+</html>
